@@ -1,29 +1,88 @@
-body{
-    font-family: Arial, sans-serif;
-    background:#10131a;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+*{
+
     margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
 }
 
-.container{
-    width:600px;
-    text-align:center;
+html{
+
+    scroll-behavior:smooth;
+
 }
 
-textarea{
-    width:100%;
-    height:150px;
-    margin:20px 0;
-    padding:15px;
-    font-size:16px;
+body{
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(56,189,248,.18), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(139,92,246,.18), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(229,9,20,.08), transparent 35%),
+        linear-gradient(
+            180deg,
+            #111827 0%,
+            #0B1220 40%,
+            #020617 100%
+        );
+
+    color:var(--text);
+
+    font-family:'Inter',sans-serif;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:white;
+
 }
 
 button{
-    padding:15px 40px;
-    font-size:18px;
+
+    border:none;
+
     cursor:pointer;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+textarea{
+
+    font-family:'Inter',sans-serif;
+
+}
+
+::selection{
+
+    background:var(--accent);
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(circle,
+            rgba(255,255,255,.03),
+            transparent 70%);
+
+    pointer-events:none;
+
+    z-index:-1;
+
 }

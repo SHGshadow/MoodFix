@@ -1,0 +1,47 @@
+@media(max-width:900px){
+
+.hero h1{
+
+    font-size:48px;
+
+}
+
+.mood-grid{
+
+    grid-template-columns:repeat(2,160px);
+
+}
+
+}
+
+@media(max-width:650px){
+
+nav{
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.mood-grid{
+
+    grid-template-columns:1fr;
+
+    width:90%;
+
+}
+
+.mood-card{
+
+    width:100%;
+
+}
+
+}

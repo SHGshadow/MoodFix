@@ -1,32 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends "base.html" %}
 
-    <meta charset="UTF-8">
+{% block title %}
+MoodFlix
+{% endblock %}
 
-    <title>MoodFlix</title>
+{% block content %}
+<nav>
 
-    <link rel="stylesheet" href="/static/css/style.css">
+    <div class="logo">
+        🎬 MoodFlix
+    </div>
 
-</head>
+    <div class="nav-links">
 
-<body>
-
-    <div class="container">
-
-        <h1>🎬 MoodFlix</h1>
-
-        <h2>How are you feeling today?</h2>
-
-        <textarea
-            placeholder="Tell us about your mood..."
-        ></textarea>
-
-        <button>
-            Recommend Movies
-        </button>
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
 
     </div>
 
-</body>
-</html>
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            🤖 AI Powered
+        </span>
+
+        <h1>
+
+            Discover Movies
+            That Match
+            Your Mood
+
+        </h1>
+
+        <p>
+
+            Whether you're happy, sad, stressed or excited,
+            MoodFlix recommends movies you'll actually enjoy.
+
+        </p>
+
+    </div>
+
+    <div class="mood-grid">
+
+        <div class="mood-card">😊 Happy</div>
+        <div class="mood-card">😢 Sad</div>
+        <div class="mood-card">😡 Angry</div>
+        <div class="mood-card">❤️ Romantic</div>
+        <div class="mood-card">😴 Bored</div>
+        <div class="mood-card">😨 Stressed</div>
+
+    </div>
+
+    <textarea
+        placeholder="Describe how you're feeling today...">
+    </textarea>
+
+    <button>
+
+        ✨ Discover My Movie
+
+    </button>
+
+</section>
+
+{% endblock %}
