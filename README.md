@@ -92,7 +92,7 @@ MoodFlix/
 
 ### Clone the repository
 
-git clone https://github.com/yourusername/MoodFlix.git
+git clone (https://github.com/SHGshadow/MoodFix.git)
 
 cd MoodFlix
 
