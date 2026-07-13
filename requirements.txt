@@ -5,5 +5,4 @@ python-multipart
 python-dotenv
 requests
 transformers
-torch
 huggingface_hub
