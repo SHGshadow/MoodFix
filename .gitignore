@@ -1,15 +1,25 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+.env
+
 # Python
 __pycache__/
 *.py[cod]
+*.pyo
 
-# Virtual environment
-venv/
+# Testing
+.pytest_cache/
+.mypy_cache/
 
-# Environment variables
-.env
-
-# VS Code
+# IDE
 .vscode/
+.idea/
 
-# macOS
+# OS
+Thumbs.db
 .DS_Store
+
+# Hugging Face Cache
+.cache/
