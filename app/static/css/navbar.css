@@ -1,4 +1,16 @@
-nav{
+/* =====================================
+            NAVBAR
+===================================== */
+
+.navbar{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:25px auto;
+
+    padding:18px 35px;
 
     display:flex;
 
@@ -6,17 +18,91 @@ nav{
 
     align-items:center;
 
-    padding:25px 8%;
+    background:rgba(19,29,54,.55);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+
+    position:sticky;
+
+    top:20px;
+
+    z-index:1000;
 
 }
 
-.logo{
+.nav-logo{
 
-    font-size:34px;
+    display:flex;
 
-    font-weight:700;
+    align-items:center;
 
-    font-family:'Poppins';
+    gap:15px;
+
+}
+
+.logo-icon{
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:30px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7568FF
+    );
+
+    box-shadow:
+    0 10px 25px rgba(79,140,255,.35);
+
+}
+
+.logo-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo-text h2{
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:800;
+
+    line-height:1;
+
+}
+
+.logo-text span{
+
+    margin-top:6px;
+
+    color:#A9B7D8;
+
+    font-size:13px;
 
 }
 
@@ -24,21 +110,21 @@ nav{
 
     display:flex;
 
-    gap:40px;
+    align-items:center;
+
+    gap:35px;
 
 }
 
 .nav-links a{
 
-    position:relative;
+    color:#DCE5FF;
+
+    font-weight:500;
 
     transition:.3s;
 
-}
-
-.nav-links a:hover{
-
-    color:var(--accent);
+    position:relative;
 
 }
 
@@ -50,15 +136,27 @@ nav{
 
     left:0;
 
-    bottom:-6px;
+    bottom:-8px;
 
     width:0;
 
     height:2px;
 
-    background:var(--accent);
+    border-radius:10px;
+
+    background:linear-gradient(
+        90deg,
+        #4F8CFF,
+        #7568FF
+    );
 
     transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:white;
 
 }
 

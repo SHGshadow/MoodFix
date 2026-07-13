@@ -1,155 +1,425 @@
+/* ==========================================
+                HERO SECTION
+========================================== */
+
 .hero{
 
-    min-height:90vh;
+    padding:60px 0 80px;
+
+}
+
+.hero-container{
+
+    width:min(900px,92%);
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+/* ================= Badge ================= */
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    background:rgba(79,140,255,.12);
+
+    border:1px solid rgba(79,140,255,.25);
+
+    color:#8EC5FF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:35px;
+
+}
+
+/* ================= Heading ================= */
+
+.hero h1{
+
+    font-size:72px;
+
+    font-weight:800;
+
+    line-height:1.08;
+
+    letter-spacing:-2px;
+
+    margin-bottom:28px;
+
+}
+
+.hero h1 span{
+
+    background:linear-gradient(
+        90deg,
+        #4F8CFF,
+        #7F8DFF
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+/* ================= Paragraph ================= */
+
+.hero p{
+
+    max-width:760px;
+
+    margin:auto;
+
+    margin-bottom:45px;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    color:#B5C3E4;
+
+}
+
+/* ==========================================
+                FORM
+========================================== */
+
+.emotion-form{
 
     display:flex;
 
     flex-direction:column;
 
+    gap:22px;
+
+}
+
+/* ================= Textarea ================= */
+
+.emotion-form textarea{
+
+    width:100%;
+
+    height:180px;
+
+    resize:none;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    font-size:18px;
+
+    font-family:inherit;
+
+    color:white;
+
+    background:#18233A;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.30);
+
+}
+
+.emotion-form textarea::placeholder{
+
+    color:#8797BC;
+
+}
+
+.emotion-form textarea:focus{
+
+    border-color:#4F8CFF;
+
+    box-shadow:
+
+        0 0 0 3px rgba(79,140,255,.15),
+        0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+            EMOTION CHIPS
+========================================== */
+
+.emotion-pills{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+}
+
+.emotion-pills span{
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    background:#16233D;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#D7E5FF;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+.emotion-pills span:hover{
+
+    background:#20365D;
+
+    border-color:#4F8CFF;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================
+                BUTTON
+========================================== */
+
+.emotion-form button{
+
+    width:320px;
+
+    margin:auto;
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px;
+
+    border-radius:999px;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #FF4D5A,
+        #FF6D5B
+    );
+
+    box-shadow:
+
+    0 18px 40px rgba(255,77,90,.30);
+
+}
+
+.emotion-form button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+    0 25px 50px rgba(255,77,90,.45);
+
+}
+
+/* ==========================================
+            AI ANALYSIS CARD
+========================================== */
+
+.analysis-section{
+
+    width:min(900px,92%);
+
+    margin:70px auto;
+
+}
+
+.analysis-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    background:#18233A;
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.analysis-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:30px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #4F8CFF,
+        #736BFF
+    );
+
+}
+
+.analysis-card small{
+
+    color:#82B5FF;
+
+    letter-spacing:1px;
+
+}
+
+.analysis-card h2{
+
+    margin:8px 0;
+
+    font-size:32px;
+
+}
+
+.analysis-card p{
+
+    color:#B5C3E4;
+
+}
+
+/* ==========================================
+            HOW IT WORKS
+========================================== */
+
+.how-it-works{
+
+    width:min(1200px,92%);
+
+    margin:120px auto;
+
+}
+
+.steps{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:50px;
+
+}
+
+.step{
+
+    background:#18233A;
+
+    border-radius:22px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+.step:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#4F8CFF;
+
+    box-shadow:0 20px 40px rgba(79,140,255,.15);
+
+}
+
+.step-icon{
+
+    width:70px;
+
+    height:70px;
+
+    margin:auto;
+
+    margin-bottom:25px;
+
+    display:flex;
+
     justify-content:center;
 
     align-items:center;
 
-    text-align:center;
-
-    padding:80px 20px;
-
-}
-
-.hero-content{
-
-    max-width:900px;
-
-}
-
-.badge{
-
-    display:inline-block;
-
-    padding:10px 20px;
-
-    border-radius:30px;
-
-    background:rgba(56,189,248,.15);
-
-    color:var(--accent);
-
-    margin-bottom:25px;
-
-    font-weight:600;
-
-}
-
-.hero h1{
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:72px;
-
-    line-height:1.2;
-
-}
-
-.hero p{
-
-    color:var(--secondary);
-
-    margin:25px auto 40px;
-
-    max-width:700px;
-
-    line-height:1.8;
-
-    font-size:18px;
-
-}
-
-.mood-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,170px);
-
-    gap:18px;
-
-    margin-bottom:40px;
-
-}
-
-.mood-card{
-
-    background:rgba(255,255,255,.06);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.08);
+    font-size:32px;
 
     border-radius:18px;
 
-    padding:18px;
-
-    transition:.35s;
-
-    cursor:pointer;
-
-}
-
-.mood-card:hover{
-
-    transform:translateY(-6px);
-
-    border-color:var(--accent);
-
-    box-shadow:0 10px 30px rgba(56,189,248,.2);
+    background:linear-gradient(
+        135deg,
+        #4F8CFF,
+        #7568FF
+    );
 
 }
 
-textarea{
+.step h3{
 
-    width:750px;
+    font-size:24px;
 
-    max-width:95%;
-
-    height:160px;
-
-    background:#182233;
-
-    color:white;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    padding:20px;
-
-    resize:none;
-
-    font-size:16px;
-
-    margin-bottom:30px;
+    margin-bottom:15px;
 
 }
 
-button{
+.step p{
 
-    background:linear-gradient(135deg,#E50914,#ff4d4d);
+    color:#AEB9D5;
 
-    color:white;
-
-    border-radius:50px;
-
-    padding:18px 45px;
-
-    font-size:18px;
-
-    transition:.35s;
-
-}
-
-button:hover{
-
-    transform:translateY(-4px);
-
-    box-shadow:0 15px 35px rgba(229,9,20,.35);
+    line-height:1.7;
 
 }

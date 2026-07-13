@@ -1,101 +1,139 @@
 {% extends "base.html" %}
 
 {% block title %}
-MoodFlix
+MoodFlix AI
 {% endblock %}
 
 {% block content %}
 
-<nav>
+<!-- ===================== NAVBAR ===================== -->
 
-    <div class="logo">
-        🎬 MoodFlix
+<nav class="navbar">
+
+    <div class="nav-logo">
+
+        <div class="logo-icon">🎬</div>
+
+        <div class="logo-text">
+
+            <h2>MoodFlix AI</h2>
+
+            <span>AI Movie Recommendation Platform</span>
+
+        </div>
+
     </div>
 
     <div class="nav-links">
 
         <a href="#">Home</a>
-        <a href="#">Features</a>
+        <a href="#recommendations">Recommendations</a>
+        <a href="#how-it-works">How it Works</a>
         <a href="#">About</a>
-        <a href="#">Contact</a>
 
     </div>
 
 </nav>
 
+<!-- ===================== HERO ===================== -->
+
 <section class="hero">
 
-    <div class="hero-content">
+    <div class="hero-container">
 
-        <span class="badge">
-            🤖 AI Powered
-        </span>
+        <div class="hero-badge">
+
+            🤖 AI Powered Recommendation
+
+        </div>
 
         <h1>
 
-            Discover Movies
-            That Match
-            Your Mood
+            Your Personal
+            <span>AI Movie Companion</span>
 
         </h1>
 
         <p>
 
-            Whether you're happy, sad, stressed or excited,
-            MoodFlix recommends movies you'll actually enjoy.
+            Describe how you're feeling today and let MoodFlix AI
+            recommend movies that perfectly match your emotions.
 
         </p>
 
+        <!-- INPUT -->
+
+        <form action="/recommend" method="post" class="emotion-form">
+
+            <textarea
+
+                name="feeling"
+
+                placeholder="Example: I had a stressful day and just want to relax..."
+
+                required>{{ feeling if feeling else "" }}</textarea>
+
+            <div class="emotion-pills">
+
+                <span>😊 Happy</span>
+                <span>😢 Sad</span>
+                <span>❤️ Romantic</span>
+                <span>😡 Angry</span>
+                <span>😨 Stressed</span>
+                <span>😴 Bored</span>
+
+            </div>
+
+            <button type="submit">
+
+                ✨ Discover My Movie
+
+            </button>
+
+        </form>
+
     </div>
-
-    <div class="mood-grid">
-
-        <div class="mood-card">😊 Happy</div>
-        <div class="mood-card">😢 Sad</div>
-        <div class="mood-card">😡 Angry</div>
-        <div class="mood-card">❤️ Romantic</div>
-        <div class="mood-card">😴 Bored</div>
-        <div class="mood-card">😨 Stressed</div>
-
-    </div>
-
-    <!-- AI Recommendation Form -->
-
-    <form action="/recommend" method="post">
-
-        <textarea
-            name="feeling"
-            placeholder="Describe how you're feeling today..."
-            required>{{ feeling if feeling else "" }}</textarea>
-
-        <button type="submit">
-
-            ✨ Discover My Movie
-
-        </button>
-
-    </form>
 
 </section>
 
-<!-- Display detected emotion -->
+<!-- ===================== AI RESULT ===================== -->
 
 {% if emotion %}
 
-<section class="emotion-result">
+<section class="analysis-section">
 
-    <h2>
+    <div class="analysis-card">
 
-        🧠 Detected Emotion:
-        <span>{{ emotion|capitalize }}</span>
+        <div class="analysis-icon">
 
-    </h2>
+            🧠
+
+        </div>
+
+        <div>
+
+            <small>AI DETECTED EMOTION</small>
+
+            <h2>{{ emotion|capitalize }}</h2>
+
+            <p>
+
+                MoodFlix analyzed your message and generated
+                personalized movie recommendations.
+
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 {% endif %}
 
-<section class="trending">
+<!-- ===================== MOVIES ===================== -->
+
+<section class="trending" id="recommendations">
 
     <div class="section-header">
 
@@ -111,7 +149,7 @@ MoodFlix
 
         <h2>
 
-            🔥 Trending This Week
+            🔥 Trending Movies
 
         </h2>
 
@@ -130,5 +168,93 @@ MoodFlix
     </div>
 
 </section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+
+<section class="how-it-works" id="how-it-works">
+
+    <div class="section-header">
+
+        <h2>
+
+            How MoodFlix AI Works
+
+        </h2>
+
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-icon">
+
+                💬
+
+            </div>
+
+            <h3>
+
+                Tell Us Your Mood
+
+            </h3>
+
+            <p>
+
+                Describe your feelings naturally.
+
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <div class="step-icon">
+
+                🤖
+
+            </div>
+
+            <h3>
+
+                AI Understands You
+
+            </h3>
+
+            <p>
+
+                Our NLP model detects your emotion.
+
+            </p>
+
+        </div>
+
+        <div class="step">
+
+            <div class="step-icon">
+
+                🎬
+
+            </div>
+
+            <h3>
+
+                Personalized Movies
+
+            </h3>
+
+            <p>
+
+                TMDb provides movies matched to your mood.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% include "components/footer.html" %}
 
 {% endblock %}

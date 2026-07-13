@@ -9,7 +9,7 @@
 
     <title>{% block title %}MoodFlix AI{% endblock %}</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Font -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -27,7 +27,12 @@
     <link rel="stylesheet" href="/static/css/navbar.css">
     <link rel="stylesheet" href="/static/css/hero.css">
     <link rel="stylesheet" href="/static/css/cards.css">
+    <link rel="stylesheet" href="/static/css/footer.css">
     <link rel="stylesheet" href="/static/css/responsive.css">
+
+    {% block styles %}
+
+    {% endblock %}
 
 </head>
 
@@ -38,6 +43,10 @@
     {% endblock %}
 
     <script src="/static/js/main.js"></script>
+
+    {% block scripts %}
+
+    {% endblock %}
 
 </body>
 

@@ -2,10 +2,29 @@
 
     <div class="poster">
 
+        {% if movie.poster_path %}
+
         <img
             src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
-            alt="{{ movie.title }}"
-        >
+            alt="{{ movie.title }}">
+
+        {% else %}
+
+        <img
+            src="https://placehold.co/500x750/18233A/FFFFFF?text=No+Image"
+            alt="{{ movie.title }}">
+
+        {% endif %}
+
+        <div class="movie-overlay">
+
+            <button class="watch-btn">
+
+                🎬 View Details
+
+            </button>
+
+        </div>
 
         <div class="rating">
 
@@ -15,15 +34,35 @@
 
     </div>
 
-    <div class="movie-info">
+    <div class="movie-content">
 
-        <h3>{{ movie.title }}</h3>
+        <h3>
 
-        <p>
+            {{ movie.title }}
 
-            {{ movie.release_date[:4] }}
+        </h3>
+
+        <p class="overview">
+
+            {{ movie.overview[:100] }}...
 
         </p>
+
+        <div class="movie-footer">
+
+            <span class="release">
+
+                📅 {{ movie.release_date[:4] }}
+
+            </span>
+
+            <span class="popularity">
+
+                🔥 {{ movie.popularity|round|int }}
+
+            </span>
+
+        </div>
 
     </div>
 
