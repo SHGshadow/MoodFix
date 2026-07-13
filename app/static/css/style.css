@@ -1,3 +1,5 @@
+@import url("variables.css");
+
 *{
 
     margin:0;
@@ -16,20 +18,26 @@ html{
 
 body{
 
-    background:
-        radial-gradient(circle at 15% 20%, rgba(56,189,248,.18), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(139,92,246,.18), transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(229,9,20,.08), transparent 35%),
-        linear-gradient(
-            180deg,
-            #111827 0%,
-            #0B1220 40%,
-            #020617 100%
-        );
+    font-family:"Inter",sans-serif;
 
     color:var(--text);
 
-    font-family:'Inter',sans-serif;
+    background:
+
+    radial-gradient(circle at top right,
+    rgba(79,140,255,.15),
+    transparent 35%),
+
+    radial-gradient(circle at bottom left,
+    rgba(123,97,255,.12),
+    transparent 35%),
+
+    linear-gradient(
+        135deg,
+        #050816,
+        #081120,
+        #0B1327
+    );
 
     min-height:100vh;
 
@@ -37,52 +45,70 @@ body{
 
 }
 
+/* Container */
+
+.container{
+
+    width:min(1350px,92%);
+
+    margin:auto;
+
+}
+
+/* Links */
+
 a{
 
     text-decoration:none;
 
-    color:white;
+    color:inherit;
 
 }
+
+/* Images */
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/* Button */
 
 button{
 
-    border:none;
+    font-family:inherit;
 
     cursor:pointer;
 
-    font-family:'Inter',sans-serif;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
 
 }
 
-textarea{
+::-webkit-scrollbar-track{
 
-    font-family:'Inter',sans-serif;
-
-}
-
-::selection{
-
-    background:var(--accent);
+    background:#09111F;
 
 }
 
-body::before{
+::-webkit-scrollbar-thumb{
 
-    content:"";
+    background:linear-gradient(
 
-    position:fixed;
+        var(--primary),
 
-    inset:0;
+        var(--secondary)
 
-    background:
+    );
 
-        radial-gradient(circle,
-            rgba(255,255,255,.03),
-            transparent 70%);
-
-    pointer-events:none;
-
-    z-index:-1;
+    border-radius:30px;
 
 }

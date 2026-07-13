@@ -5,6 +5,7 @@ MoodFlix
 {% endblock %}
 
 {% block content %}
+
 <nav>
 
     <div class="logo">
@@ -21,7 +22,6 @@ MoodFlix
     </div>
 
 </nav>
-
 
 <section class="hero">
 
@@ -59,15 +59,75 @@ MoodFlix
 
     </div>
 
-    <textarea
-        placeholder="Describe how you're feeling today...">
-    </textarea>
+    <!-- AI Recommendation Form -->
 
-    <button>
+    <form action="/recommend" method="post">
 
-        ✨ Discover My Movie
+        <textarea
+            name="feeling"
+            placeholder="Describe how you're feeling today..."
+            required>{{ feeling if feeling else "" }}</textarea>
 
-    </button>
+        <button type="submit">
+
+            ✨ Discover My Movie
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- Display detected emotion -->
+
+{% if emotion %}
+
+<section class="emotion-result">
+
+    <h2>
+
+        🧠 Detected Emotion:
+        <span>{{ emotion|capitalize }}</span>
+
+    </h2>
+
+</section>
+
+{% endif %}
+
+<section class="trending">
+
+    <div class="section-header">
+
+        {% if emotion %}
+
+        <h2>
+
+            🎯 Recommended Movies
+
+        </h2>
+
+        {% else %}
+
+        <h2>
+
+            🔥 Trending This Week
+
+        </h2>
+
+        {% endif %}
+
+    </div>
+
+    <div class="movie-grid">
+
+        {% for movie in movies %}
+
+            {% include "components/movie_card.html" %}
+
+        {% endfor %}
+
+    </div>
 
 </section>
 
